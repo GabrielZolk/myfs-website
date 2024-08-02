@@ -2,7 +2,7 @@
   <div class="app">
     <div class="header-container">
       <div>
-        <img src="./assets/3.png" width="80" alt="logo">
+        <img src="./assets/1.png" width="80" alt="logo">
       </div>
       <div>
         <a href="https://www.facebook.com/Michelleferreirafotografia/" target="_blank" class="icon-link">
