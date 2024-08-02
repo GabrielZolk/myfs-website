@@ -111,7 +111,7 @@ export default {
 }
 
 .icon-container {
-  background-color: #ebbb3a;
+  background-color: white;
   padding: 15px;
   border-radius: 50%;
   margin: 0px 5px;
@@ -122,7 +122,7 @@ export default {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inria Serif', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,7 +139,7 @@ export default {
 }
 
 .icon {
-  color: white;
+  color: #ebbb3a;
   font-size: 15px;
 }
 
@@ -212,7 +212,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inria Serif', sans-serif;
   font-size: 40px;
   position: absolute;
   top: 50%;
