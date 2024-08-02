@@ -5,15 +5,22 @@
         <img src="./assets/3.jpeg" width="80" alt="logo">
       </div>
       <div>
-        <span class="icon-container">
-          <i class="fab fa-facebook icon"></i>
-        </span>
-        <span class="icon-container">
-          <i class="fab fa-tiktok icon"></i>
-        </span>
-        <span class="icon-container">
-          <i class="fab fa-instagram icon"></i>
-        </span>
+        <a href="https://www.facebook.com/Michelleferreirafotografia/" target="_blank" class="icon-link">
+          <span class="icon-container">
+            <i class="fab fa-facebook icon"></i>
+          </span>
+        </a>
+        <a href="https://www.tiktok.com/@mi.mmy" target="_blank" class="icon-link">
+          <span class="icon-container">
+            <i class="fab fa-tiktok icon"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/michelleferreirafotografiaa" target="_blank" class="icon-link">
+          <span class="icon-container">
+            <i class="fab fa-instagram icon"></i>
+          </span>
+        </a>
+        
       </div>
       <div class="menu-container">
         <button class="menu-toggle" @click="toggleMenu">
