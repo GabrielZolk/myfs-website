@@ -111,10 +111,11 @@ export default {
 }
 
 .icon-container {
-  background-color: black;
+  background-color: white;
   padding: 15px;
   border-radius: 50%;
   margin: 0px 5px;
+  border: 1px solid #ebbb3a;
 }
 
 .menu-list {
