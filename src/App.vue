@@ -111,7 +111,7 @@ export default {
 }
 
 .icon-container {
-  background-color: white;
+  background-color: #ebbb3a;
   padding: 15px;
   border-radius: 50%;
   margin: 0px 5px;
@@ -139,7 +139,7 @@ export default {
 }
 
 .icon {
-  color: #EFC756;
+  color: white;
   font-size: 15px;
 }
 
