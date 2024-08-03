@@ -75,7 +75,7 @@
       <div class="hifen"></div>
       <div>
         <p class="about-text">
-          Sou a mamãe do Bruce, uma pessoa incrível e a melhor fotógrafa do mundo!!!!!!
+          Sou a mamãe do Bruce e a melhor fotógrafa do mundo!!!!!!
         </p>
       </div>
     </div>
