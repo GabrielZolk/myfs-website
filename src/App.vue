@@ -75,7 +75,15 @@
       <div class="hifen"></div>
       <div>
         <p class="about-text">
-          Sou a mamãe do Bruce e a melhor fotógrafa do mundo!!!!!!
+          Olá! Sou Michelle Ferreira da Silva, uma fotógrafa apaixonada por capturar a beleza e a emoção dos momentos cotidianos.
+Sempre fui apaixonada por uma boa foto, porém minha jornada na fotografia começou em 2021, quando comprei minha primeira câmera, em 2022 comecei estudar Fotografia pela [ Foto e Conceito], onde desenvolvi uma compreensão profunda das técnicas fotográficas, composição e edição, meses depois comecei a fazer fotos em eventos, foi então que percebi o poder das imagens para contar histórias e despertar sentimentos.
+
+Minha abordagem é centrada em capturar momentos espontâneos e verdadeiros, onde busco capturar a autenticidade do momento enquanto adiciono um toque artístico. Prefiro trabalhar com luz natural para criar imagens que transmitam uma sensação de espontaneidade e verdade.” Acredito que cada imagem deve transmitir uma narrativa e emocionar o espectador.
+
+Quando não estou atrás da câmera, gosto de curtir a natureza, passear com meu Pet, aproveitar a familiar e fazer exercícios físicos.
+Adoro descobrir novos lugares e experiências que possam enriquecer meu olhar artístico.
+
+Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais para acompanhar minhas últimas criações. Se você tem um projeto em mente ou simplesmente quer conversar sobre fotografia, não hesite em me contactar!
         </p>
       </div>
     </div>
