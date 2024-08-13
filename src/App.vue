@@ -273,7 +273,7 @@ export default {
   font-family: 'Inria Serif', sans-serif;
   font-size: 40px;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -301,7 +301,7 @@ export default {
   position: absolute;
   bottom: 5px;
   left: 0;
-  max-width: 200px;
+  max-width: 180px;
 }
 
 .hifen {
@@ -314,6 +314,7 @@ export default {
 .about-title {
   font-family: 'Inria Serif', sans-serif;
   font-size: 30px;
+  color: #5e5e5e;
 }
 
 .about-title-container {
@@ -395,5 +396,9 @@ export default {
   font-size: 24px;
   color: white;
   font-weight: bold;
+}
+
+.about-text {
+  color:#A0A09F;
 }
 </style>
