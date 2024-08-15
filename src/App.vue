@@ -87,7 +87,10 @@ Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais p
         </p>
       </div>
     </div>
-    <div v-if="expandedImage" class="expanded-image-overlay" @click="closeExpandedImage">
+    <div v-if="expandedImage" class="expanded-image-overlay" 
+      :class="['expanded-image-overlay', { show: showExpandedImage, hide: !showExpandedImage }]" 
+      @click="closeExpandedImage"
+    >
       <img :src="expandedImage" class="expanded-image" />
       <button class="close-button" @click="closeExpandedImage">X</button>
     </div>
@@ -119,6 +122,18 @@ Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais p
         </span>
       </div>
     </div>
+    <div class="contact-container">
+      <div class="contact-title-container">
+        <span class="contact-title">Vamos conversar</span>
+      </div>
+      <div class="hifen"></div>
+      <div class="inputs-container">
+        <input type="text" class="name-input input-default" placeholder="Nome">
+        <input type="text" class="email-input input-default" placeholder="Email">
+        <input type="text" class="phone-input input-default" placeholder="Telefone">
+        <textarea type="text" class="message-input textarea-default" placeholder="Mensagem"></textarea>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -145,9 +160,13 @@ export default {
 
     expandImage(imageSrc) {
       this.expandedImage = imageSrc;
+      this.showExpandedImage = true
     },
     closeExpandedImage() {
-      this.expandedImage = null;
+      this.showExpandedImage = false;
+      setTimeout(() => {
+        this.expandedImage = null;
+      }, 500);
     },
   },
 }
@@ -174,6 +193,24 @@ export default {
   border-radius: 50%;
   margin: 0px 5px;
   border: 1px solid #ebbb3a;
+}
+
+.input-default {
+  border: 1px solid #ebbb3a;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;  
+}
+
+.textarea-default {
+  border: 1px solid #ebbb3a;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  resize: none;
+  min-height: 200px;
 }
 
 .menu-list {
@@ -273,7 +310,7 @@ export default {
   font-family: 'Inria Serif', sans-serif;
   font-size: 40px;
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -317,7 +354,22 @@ export default {
   color: #5e5e5e;
 }
 
+.contact-container {
+  margin: 20px 10px;
+}
+
+.contact-title {
+  font-family: 'Inria Serif', sans-serif;
+  font-size: 30px;
+  color: #5e5e5e;
+}
+
 .about-title-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-title-container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -377,6 +429,23 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Aplica a animação de fade-in quando a classe show é adicionada */
+.expanded-image-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Aplica a animação de fade-out quando a classe hide é adicionada */
+.expanded-image-overlay.hide {
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeOut 0.5s ease-out;
 }
 
 .expanded-image {
@@ -400,5 +469,23 @@ export default {
 
 .about-text {
   color:#A0A09F;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 </style>
