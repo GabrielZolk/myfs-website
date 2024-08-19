@@ -132,6 +132,7 @@ Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais p
         <input type="text" class="email-input input-default" placeholder="Email">
         <input type="text" class="phone-input input-default" placeholder="Telefone">
         <textarea type="text" class="message-input textarea-default" placeholder="Mensagem"></textarea>
+        <button class="contact-button">Enviar</button>
       </div>
     </div>
   </div>
@@ -469,6 +470,18 @@ export default {
 
 .about-text {
   color:#A0A09F;
+}
+
+.contact-button {
+  font-family: 'Inria Serif', sans-serif;
+  font-size: 20px;
+  color: #5e5e5e;
+  min-width: 100%;
+  background-color: #ebbb3a;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 5px;
+  text-decoration: none;
 }
 
 @keyframes fadeIn {
