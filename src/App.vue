@@ -1,10 +1,11 @@
 <template>
   <div class="app">
     <div class="header-container">
-      <div>
-        <img src="./assets/1.png" width="80" alt="logo">
+      <div class="logo-container-main">
+        <img class="logo-mobile" src="./assets/1.png" width="80" alt="logo">
+        <img class="logo-desktop" src="./assets/4.png" width="200" alt="logo">
       </div>
-      <div>
+      <div class="icon-container-main">
         <a href="https://www.facebook.com/Michelleferreirafotografia/" target="_blank" class="icon-link">
           <span class="icon-container">
             <i class="fab fa-facebook icon"></i>
@@ -20,7 +21,6 @@
             <i class="fab fa-instagram icon"></i>
           </span>
         </a>
-        
       </div>
       <div class="menu-container">
         <button class="menu-toggle" @click="toggleMenu">
@@ -31,22 +31,28 @@
       </div>
       <div v-if="isActive" :class="{'menu': true, 'animate__animated': isActive, 'animate__fadeInRight': isActive}">
         <ul class="menu-list">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">QUEM SOU</a></li>
-          <li><a href="#portfolio">PORTFOLIO</a></li>
-          <li><a href="#contact">CONTATO</a></li>
-          <li><a href="#albuns">ÁLBUNS</a></li>
-          <li><a href="#agenda">AGENDA ONLINE</a></li>
+          <li><a href="#home" @click="scrollToSection('home')">HOME</a></li>
+          <li><a href="#about" @click="scrollToSection('about')">QUEM SOU</a></li>
+          <li><a href="#portfolio" @click="scrollToSection('portfolio')">PORTFOLIO</a></li>
+          <li><a href="#contact" @click="scrollToSection('contact')">CONTATO</a></li>
+        </ul>
+      </div>
+      <div class="navbar">
+        <ul>
+          <li><a href="#home" @click="scrollToSectionDesktop('home')">HOME</a></li>
+          <li><a href="#about" @click="scrollToSectionDesktop('about')">QUEM SOU</a></li>
+          <li><a href="#portfolio" @click="scrollToSectionDesktop('portfolio')">PORTFOLIO</a></li>
+          <li><a href="#contact" @click="scrollToSectionDesktop('contact')">CONTATO</a></li>
         </ul>
       </div>
     </div>
-    <div ref="home">
+    <div ref="home" class="home">
       <div class="home-image-container">
         <img src="./assets/home.jpg" width="100%" class="home-image" alt="home">
       </div>
       <div class="home-text">
         <div>
-          <img src="./assets/1.png" width="80" alt="logo">
+          <img src="./assets/1.png" width="80" alt="logo" class="home-logo">
         </div>
         <span class="home-title">MICHELLE</span>
         <span class="home-title">FERREIRA</span>
@@ -67,24 +73,26 @@
         <img src="./assets/aboutbg.png" width="100%" alt="about" class="about-bg-image">
         <img src="./assets/my.png" class="about-image-she-photo" alt="about">
       </div>
-      <div class="about-title-container">
-        <span class="about-title">
-          Quem sou
-        </span>
-      </div>
-      <div class="hifen"></div>
-      <div>
-        <p class="about-text">
-          Olá! Sou Michelle Ferreira da Silva, uma fotógrafa apaixonada por capturar a beleza e a emoção dos momentos cotidianos.
-Sempre fui apaixonada por uma boa foto, porém minha jornada na fotografia começou em 2021, quando comprei minha primeira câmera, em 2022 comecei estudar Fotografia pela [ Foto e Conceito], onde desenvolvi uma compreensão profunda das técnicas fotográficas, composição e edição, meses depois comecei a fazer fotos em eventos, foi então que percebi o poder das imagens para contar histórias e despertar sentimentos.
-
-Minha abordagem é centrada em capturar momentos espontâneos e verdadeiros, onde busco capturar a autenticidade do momento enquanto adiciono um toque artístico. Prefiro trabalhar com luz natural para criar imagens que transmitam uma sensação de espontaneidade e verdade.” Acredito que cada imagem deve transmitir uma narrativa e emocionar o espectador.
-
-Quando não estou atrás da câmera, gosto de curtir a natureza, passear com meu Pet, aproveitar a familiar e fazer exercícios físicos.
-Adoro descobrir novos lugares e experiências que possam enriquecer meu olhar artístico.
-
-Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais para acompanhar minhas últimas criações. Se você tem um projeto em mente ou simplesmente quer conversar sobre fotografia, não hesite em me contactar!
-        </p>
+      <div class="about-right">
+        <div class="about-title-container">
+          <span class="about-title">
+            Quem sou
+          </span>
+        </div>
+        <div class="hifen"></div>
+        <div class="about-text-container">
+          <p class="about-text">
+            Olá! Sou Michelle Ferreira da Silva, uma fotógrafa apaixonada por capturar a beleza e a emoção dos momentos cotidianos.
+  Sempre fui apaixonada por uma boa foto, porém minha jornada na fotografia começou em 2021, quando comprei minha primeira câmera. <br> Em 2022 comecei estudar Fotografia pela [ Foto e Conceito ], onde desenvolvi uma compreensão profunda das técnicas fotográficas, composição e edição. Meses depois, comecei a fazer fotos em eventos, foi então que percebi o poder das imagens para contar histórias e despertar sentimentos.
+  
+  Minha abordagem é centrada em capturar momentos espontâneos e verdadeiros, onde busco capturar a autenticidade do momento enquanto adiciono um toque artístico. Prefiro trabalhar com luz natural para criar imagens que transmitam uma sensação de espontaneidade e verdade.” Acredito que cada imagem deve transmitir uma narrativa e emocionar o espectador.
+  
+  Quando não estou atrás da câmera, gosto de curtir a natureza, passear com meu Pet, aproveitar a família e fazer exercícios físicos.
+  Adoro descobrir novos lugares e experiências que possam enriquecer meu olhar artístico.
+  
+  Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais para acompanhar minhas últimas criações. Se você tem um projeto em mente ou simplesmente quer conversar sobre fotografia, não hesite em me contactar!
+          </p>
+        </div>
       </div>
     </div>
     <div v-if="expandedImage" class="expanded-image-overlay" 
@@ -95,23 +103,25 @@ Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais p
       <button class="close-button" @click="closeExpandedImage">X</button>
     </div>
     <div ref="portfolio" class="portfolio-container">
-      <div class="portfolio-image-first-container">
-        <img src="./assets/portfolio/port1.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port1.jpg'))">
-        <img src="./assets/portfolio/port2.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port2.jpg'))">
-        <img src="./assets/portfolio/port3.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port3.jpg'))">
-        <img src="./assets/portfolio/port4.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port4.jpg'))">
-      </div>
-      <div class="portfolio-image-second-container">
-        <img src="./assets/portfolio/port5.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port5.jpg'))">
-        <img src="./assets/portfolio/port6.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port6.jpg'))">
-        <img src="./assets/portfolio/port7.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port7.jpg'))">
-        <img src="./assets/portfolio/port8.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port8.jpg'))">
-      </div>
-      <div class="portfolio-image-third-container">
-        <img src="./assets/portfolio/port9.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port9.jpg'))">
-        <img src="./assets/portfolio/port10.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port10.jpg'))">
-        <img src="./assets/portfolio/port11.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port11.jpg'))">
-        <img src="./assets/portfolio/port12.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port12.jpg'))">
+      <div class="portfolio-imgs">
+        <div class="portfolio-image-first-container">
+          <img src="./assets/portfolio/port1.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port1.jpg'))">
+          <img src="./assets/portfolio/port2.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port2.jpg'))">
+          <img src="./assets/portfolio/port3.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port3.jpg'))">
+          <img src="./assets/portfolio/port4.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port4.jpg'))">
+        </div>
+        <div class="portfolio-image-second-container">
+          <img src="./assets/portfolio/port5.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port5.jpg'))">
+          <img src="./assets/portfolio/port6.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port6.jpg'))">
+          <img src="./assets/portfolio/port7.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port7.jpg'))">
+          <img src="./assets/portfolio/port8.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port8.jpg'))">
+        </div>
+        <div class="portfolio-image-third-container">
+          <img src="./assets/portfolio/port9.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port9.jpg'))">
+          <img src="./assets/portfolio/port10.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port10.jpg'))">
+          <img src="./assets/portfolio/port11.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port11.jpg'))">
+          <img src="./assets/portfolio/port12.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port12.jpg'))">
+        </div>
       </div>
       <div class="portfolio-image-fourth-container">
         <img src="./assets/portfolio/port13.jpg" class="portfolio-final-image" alt="portfolio">
@@ -122,17 +132,22 @@ Sinta-se à vontade para explorar meu portfólio e me seguir nas redes sociais p
         </span>
       </div>
     </div>
-    <div class="contact-container">
-      <div class="contact-title-container">
-        <span class="contact-title">Vamos conversar</span>
+    <div ref="contact" class="contact-container">
+      <div>
+        <div class="contact-title-container">
+          <span class="contact-title">Vamos conversar</span>
+        </div>
+        <div class="hifen"></div>
+        <div class="inputs-container">
+          <input type="text" class="name-input input-default" placeholder="Nome">
+          <input type="text" class="email-input input-default" placeholder="Email">
+          <input type="text" class="phone-input input-default" placeholder="Telefone">
+          <textarea type="text" class="message-input textarea-default" placeholder="Mensagem"></textarea>
+          <button class="contact-button">Enviar</button>
+        </div>
       </div>
-      <div class="hifen"></div>
-      <div class="inputs-container">
-        <input type="text" class="name-input input-default" placeholder="Nome">
-        <input type="text" class="email-input input-default" placeholder="Email">
-        <input type="text" class="phone-input input-default" placeholder="Telefone">
-        <textarea type="text" class="message-input textarea-default" placeholder="Mensagem"></textarea>
-        <button class="contact-button">Enviar</button>
+      <div>
+        <img src="./assets/finaldesktopcontactimg.png" width="100" alt="contact-image" class="final-img-contact">
       </div>
     </div>
   </div>
@@ -169,6 +184,48 @@ export default {
         this.expandedImage = null;
       }, 500);
     },
+
+    scrollToSection(section) {
+      const element = this.$refs[section];
+      const start = window.pageYOffset;
+      const end = element.getBoundingClientRect().top + window.pageYOffset;
+      const duration = 600;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const easing = progress * (2 - progress);
+        window.scrollTo(0, start + (end - start) * easing);
+        if (progress < 1) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+
+      this.toggleMenu();
+    },
+
+    scrollToSectionDesktop(section) {
+      const element = this.$refs[section];
+      const start = window.pageYOffset;
+      const end = element.getBoundingClientRect().top + window.pageYOffset;
+      const duration = 600;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const easing = progress * (2 - progress);
+        window.scrollTo(0, start + (end - start) * easing);
+        if (progress < 1) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    },
   },
 }
 </script>
@@ -178,6 +235,14 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.app {
+  overflow-x: hidden;
+}
+
+.final-img-contact {
+  display: none;
 }
 
 .header-container {
@@ -221,8 +286,14 @@ export default {
   font-family: 'Inria Serif', sans-serif;
   display: flex;
   flex-direction: column;
+  font-size: 25px;
   align-items: center;
-  justify-content: center;
+  margin-top: 150px;
+  color: rgb(187, 187, 187);
+}
+
+.logo-desktop {
+  display: none;
 }
 
 .menu-list li {
@@ -256,7 +327,7 @@ export default {
 .bar {
   width: 30px;
   height: 3px;
-  background-color: #333;
+  background-color: #e0bc57;
   margin: 5px 0;
   transition: all 0.3s;
 }
@@ -275,16 +346,15 @@ export default {
 
 .menu {
   position: absolute;
-  background-color: #A0A09F;
+  background-color: white;
   min-width: 100%;
-  min-height: 100vh;
+  height: 100%;
   bottom: 0;
   left: 0;
   right: 0;
   top: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
   z-index: 4;
 }
 
@@ -380,6 +450,10 @@ export default {
   height: 20vw;
   object-fit: cover;
   display: flex;
+}
+
+.navbar {
+  display: none;
 }
 
 .portfolio-image-first-container {
@@ -499,6 +573,208 @@ export default {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-container {
+    display: none;
+  }
+
+  .icon-container-main {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    top: 50vh;
+    z-index: 10;
+  }
+
+  .icon-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%;
+    margin: 0px 5px;
+    border: 1px solid #ebbb3a;
+    z-index: 10;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #9b9b9b;
+    font-size: 20px;
+  }
+  
+  .header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, black, transparent);
+    padding: 2rem 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    transition: .3s;
+    border: none;
+    color: white;
+  }
+
+  .header-container navbar ul li {
+    z-index: 1000;
+    color: white;
+  }
+  
+  .logo-container-main .logo-mobile {
+    display: none;
+  }
+
+  .logo-container-main .logo-desktop {
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .home-image {
+    min-width: 100vw;
+    bottom: 0;
+    filter: brightness(70%);
+    position: fixed;
+    z-index: -10;
+    object-fit: cover;
+    min-height: 100vh;
+  }
+  
+  .home {
+    height: 100vh;
+  }
+
+  .home-text {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Inria Serif', sans-serif;
+    font-size: 70px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: #ffffff;
+  }
+
+  .home-title {
+    margin: 0px 5px;
+  }
+  
+  .home-subtitle {
+    font-size: 40px;
+  }
+
+  .home-logo {
+    filter: contrast(200%);
+  }
+
+  .about {
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    display: flex;
+  }
+
+  .about-image-container {
+    min-width: 50vw;
+    object-fit: cover;
+    display: flex;
+  }
+
+
+  .about-right {
+    background-color: white;
+    padding: 40px;
+    min-width: 100vw;
+  }
+
+  .about-image-she-photo {
+    position: absolute;
+    right: 0;
+    margin-left: 10%;
+    object-fit: cover;
+    min-width: 350px;
+    display: flex;
+  }
+
+  .about-text {
+    width: 40vw;
+    max-height: 25vh;
+    word-wrap: break-word;
+  }
+  
+
+  .portfolio-image {
+    transition: filter 1s ease;
+  }
+
+  .portfolio-image:hover {
+    filter: brightness(190%);
+  }
+
+  .portfolio-final-image {
+    opacity: 1;
+    filter: brightness(60%);
+  }
+
+  .portfolio-imgs {
+    padding-bottom: 20px;
+    background-color: white;
+  }
+
+  .portfolio-final-image-text {
+    color: white;
+    font-size: 50px;
+    max-width: 700px;
+    margin-bottom: 50px;
+  }
+  
+  .contact-container {
+    background-color: white;
+    margin: 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inputs-container {
+    width: 100%;
+    padding: 0 120px;
+  }
+
+  .final-img-contact {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+  }
+
+  .contact-title, .hifen {
+    margin-left: 120px;
+  }
+
+  .expanded-image-overlay, .expanded-image {
+    z-index: 2000;
   }
 }
 </style>
