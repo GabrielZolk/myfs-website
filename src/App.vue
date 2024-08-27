@@ -39,10 +39,10 @@
       </div>
       <div class="navbar">
         <ul>
-          <li><a href="#home" @click="scrollToSectionDesktop('home')">HOME</a></li>
-          <li><a href="#about" @click="scrollToSectionDesktop('about')">QUEM SOU</a></li>
-          <li><a href="#portfolio" @click="scrollToSectionDesktop('portfolio')">PORTFOLIO</a></li>
-          <li><a href="#contact" @click="scrollToSectionDesktop('contact')">CONTATO</a></li>
+          <li><a href="#home" class="home-nav" @click="scrollToSectionDesktop('home')">HOME</a></li>
+          <li><a href="#about" class="about-nav" @click="scrollToSectionDesktop('about')">QUEM SOU</a></li>
+          <li><a href="#portfolio" class="portfolio-nav" @click="scrollToSectionDesktop('portfolio')">PORTFOLIO</a></li>
+          <li><a href="#contact" class="contact-nav" @click="scrollToSectionDesktop('contact')">CONTATO</a></li>
         </ul>
       </div>
     </div>
@@ -114,7 +114,7 @@
           <img src="./assets/portfolio/port5.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port5.jpg'))">
           <img src="./assets/portfolio/port6.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port6.jpg'))">
           <img src="./assets/portfolio/port7.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port7.jpg'))">
-          <img src="./assets/portfolio/port8.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port8.jpg'))">
+          <img src="./assets/portfolio/port8.jpeg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port8.jpeg'))">
         </div>
         <div class="portfolio-image-third-container">
           <img src="./assets/portfolio/port9.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port9.jpg'))">
@@ -122,8 +122,14 @@
           <img src="./assets/portfolio/port11.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port11.jpg'))">
           <img src="./assets/portfolio/port12.jpg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port12.jpg'))">
         </div>
+        <div class="portfolio-image-fourth-container">
+          <img src="./assets/portfolio/port14.jpeg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port14.jpeg'))">
+          <img src="./assets/portfolio/port15.jpeg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port15.jpeg'))">
+          <img src="./assets/portfolio/port16.jpeg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port16.jpeg'))">
+          <img src="./assets/portfolio/port17.jpeg" class="portfolio-image" alt="portfolio" @click="expandImage(require('@/assets/portfolio/port17.jpeg'))">
+        </div>
       </div>
-      <div class="portfolio-image-fourth-container">
+      <div class="portfolio-image-fourth-final-container">
         <img src="./assets/portfolio/port13.jpg" class="portfolio-final-image" alt="portfolio">
       </div>
       <div class="portfolio-image-fourth-container-text">
@@ -468,6 +474,10 @@ export default {
   display: flex;
 }
 
+.portfolio-image-fourth-container {
+  display: flex;
+}
+
 .portfolio-final-image {
   width: 100vw;
   height: 60vw;
@@ -775,6 +785,10 @@ export default {
 
   .expanded-image-overlay, .expanded-image {
     z-index: 2000;
+  }
+
+  .home-nav, .about-nav, .portfolio-nav, .contact-nav:hover {
+    color: #ebbb3a;
   }
 }
 </style>
