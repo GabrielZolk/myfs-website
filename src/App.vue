@@ -11,7 +11,7 @@
             <i class="fab fa-facebook icon"></i>
           </span>
         </a>
-        <a href="https://www.tiktok.com/@mi.mmy" target="_blank" class="icon-link">
+        <a href="https://www.tiktok.com/@michelleferreirafotograf" target="_blank" class="icon-link">
           <span class="icon-container">
             <i class="fab fa-tiktok icon"></i>
           </span>
