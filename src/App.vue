@@ -586,6 +586,69 @@ export default {
   }
 }
 
+@media (max-width: 1471px) {
+  .about-bg-image {
+    width: 500px;
+  }
+
+  .about-image-container {
+    min-width: 500px !important;
+  }
+
+  .about-right {
+    min-width: 100% !important;
+    padding: 40px !important;
+  }
+
+  .about-text {
+    min-width: 60%;
+  }
+
+  .about-title-container {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 1267px) {
+  .about-bg-image {
+    width: 350px;
+  }
+
+  .about-image-container {
+    min-width: 350px !important;
+  }
+
+  .about-image-she-photo {
+    min-width: 250px !important;
+  }
+
+  .about-text {
+    min-width: 69%;
+  }
+
+  .about-right {
+    min-width: 100% !important;
+  }
+}
+
+@media (max-width: 1150px) {
+  .about {
+    display: block !important;
+  }
+
+  .about-bg-image {
+    width: 100%;
+  }
+
+  .about-right {
+    height: 100%;
+  }
+
+  .about-text {
+    min-width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .menu-container {
     display: none;
@@ -713,8 +776,8 @@ export default {
 
   .about-right {
     background-color: white;
-    padding: 40px;
-    min-width: 100vw;
+    padding: 10px 20px;
+    min-width: 50vw;
   }
 
   .about-image-she-photo {
@@ -739,11 +802,16 @@ export default {
 
   .portfolio-image:hover {
     filter: brightness(190%);
+    cursor: pointer;
   }
 
   .portfolio-final-image {
     opacity: 1;
     filter: brightness(60%);
+  }
+
+  .hifen {
+    margin-left: 0px !important;
   }
 
   .portfolio-imgs {
