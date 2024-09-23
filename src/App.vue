@@ -144,13 +144,17 @@
           <span class="contact-title">Vamos conversar</span>
         </div>
         <div class="hifen"></div>
-        <div class="inputs-container">
-          <input type="text" class="name-input input-default" placeholder="Nome">
-          <input type="text" class="email-input input-default" placeholder="Email">
-          <input type="text" class="phone-input input-default" placeholder="Telefone">
-          <textarea type="text" class="message-input textarea-default" placeholder="Mensagem"></textarea>
-          <button class="contact-button">Enviar</button>
-        </div>
+        <form 
+            @submit.prevent="submitForm"
+            class="inputs-container">
+          <input v-model="form.name" type="text" name="name" id="name" class="name-input input-default" placeholder="Nome" required>
+          <input v-model="form.email" type="email" @blur="validateEmail" name="email" id="email" class="email-input input-default" placeholder="Email" required>
+          <span v-if="emailError" style="color: red;">{{ emailError }}</span>
+          <input v-model="form.phone" type="tel" v-mask="'(##) #####-####'" class="phone-input input-default" name="phone" id="phone" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="Telefone (XX) XXXXX-XXXX" required>
+          <textarea v-model="form.message" type="text" name="message" class="message-input textarea-default" placeholder="Mensagem" required></textarea>
+          <button type="submit" class="contact-button">Enviar 💌</button>
+        </form>
+        <p style="color: #00ff1d; text-align: center; margin-top: 10px">{{ statusMessage }}</p>
       </div>
       <div>
         <img src="./assets/finaldesktopcontactimg.png" width="100" alt="contact-image" class="final-img-contact">
@@ -162,8 +166,17 @@
 <script>
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'animate.css';
+import Vue from 'vue';
+import VueMask from 'v-mask';
+import { VueMaskDirective } from 'v-mask';
+
+Vue.use(VueMask);
 
 export default {
+  directives: {
+    'mask': VueMaskDirective
+  },
+
   name: 'App',
   components: {
     
@@ -173,11 +186,47 @@ export default {
     return {
       isActive: false,
       expandedImage: null,
+      form: {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      },
+      statusMessage: '',
+      emailError: '',
     };
   },
   methods: {
     toggleMenu() {
       this.isActive = !this.isActive;
+    },
+
+    async submitForm() {
+      if (!this.form.email) {
+        return
+      }
+
+      try {
+        const response = await fetch('https://formspree.io/f/mgvwjnka', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: JSON.stringify(this.form),
+        });
+
+        if (response.ok) {
+          this.statusMessage = 'Mensagem enviada com sucesso! ✅ Muito obrigada por entrar em contato!';
+          this.form = { name: '', email: '', phone: '', message: '' };
+        } else {
+          const data = await response.json();
+          if (data.errors) {
+            this.statusMessage = data.errors.map(error => error.message).join(', ');
+          } else {
+            this.statusMessage = 'Oops! There was a problem submitting your form.';
+          }
+        }
+      } catch (error) {
+        this.statusMessage = 'Oops! There was a problem submitting your form.';
+      }
     },
 
     expandImage(imageSrc) {
@@ -231,6 +280,17 @@ export default {
       }
 
       requestAnimationFrame(animation);
+    },
+
+    validateEmail() {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      this.emailError = '';
+
+      if (!this.form.email) {
+        this.emailError = 'O campo de e-mail é obrigatório.';
+      } else if (!regex.test(this.form.email)) {
+        this.emailError = 'Por favor, insira um e-mail válido.';
+      }
     },
   },
 }
@@ -566,6 +626,45 @@ export default {
   border-radius: 5px;
   padding: 10px 5px;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #35f705;
+  color: white;
+  cursor: pointer;
+}
+
+.home-nav:hover {
+  color: #ebbb3a;
+}
+
+.contact-nav:hover {
+  color: #ebbb3a;
+}
+
+.portfolio-nav:hover {
+  color: #ebbb3a;
+}
+
+.about-nav:hover {
+  color: #ebbb3a;
+}
+
+.home-nav {
+  transition: color 0.3s ease, color 0.3s ease;
+}
+
+.contact-nav {
+  transition: color 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-nav {
+  transition: color 0.3s ease, color 0.3s ease;
+}
+
+.about-nav {
+  transition: color 0.3s ease, color 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -619,7 +718,7 @@ export default {
   }
 
   .about-image-she-photo {
-    min-width: 250px !important;
+    min-width: 200px !important;
   }
 
   .about-text {
